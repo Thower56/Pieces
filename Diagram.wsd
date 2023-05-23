@@ -1,41 +1,32 @@
-@startuml
+@startuml diagram
 
-abstract class Pieces
+class Pieces
 {
     -description : string
     -numero_serie : int
     -reference : string
+    -Dictionary<Pieces, int> : Dictionary<Pieces,int>
+    +ListeComposant() : string
     +GetDescription(): string
     +GetNumeroSerie(): int
     +GetReference(): string
 }
 
 class Pieces_assemblage
+{
+    -Test
+}
 
 class Piece_Moulee
 
 class Piece_Usinee
 
-Pieces <-- Piece_Moulee
+class Piece_SousEnsemble
+
+Pieces --> Piece_Moulee
 Pieces <-- Pieces_assemblage
 Pieces <-- Piece_Usinee
-Pieces *-- Piece_SousEnsemble
-Piece_SousEnsemble *-- Ensemble
-
-
-class Piece_SousEnsemble
-{
-    -Dictionary<Pieces> : Dictionary<Pieces>
-    +ListeComposant() : string
-
-}
-
-class Ensemble
-{
-    -Dictionary<Piece_SousEnsemble> : Dictionary<Piece_SousEnsemble>
-    +ListeComposant() : string
-}
-
+Pieces <-- Piece_SousEnsemble
 
 
 @enduml

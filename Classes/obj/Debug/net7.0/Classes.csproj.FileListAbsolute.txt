@@ -1,0 +1,12 @@
+C:\Session3\OOP2\Pieces\Classes\bin\Debug\net7.0\Classes.deps.json
+C:\Session3\OOP2\Pieces\Classes\bin\Debug\net7.0\Classes.dll
+C:\Session3\OOP2\Pieces\Classes\bin\Debug\net7.0\Classes.pdb
+C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\Classes.csproj.AssemblyReference.cache
+C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\Classes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\Classes.AssemblyInfoInputs.cache
+C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\Classes.AssemblyInfo.cs
+C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\Classes.csproj.CoreCompileInputs.cache
+C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\Classes.dll
+C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\refint\Classes.dll
+C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\Classes.pdb
+C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\ref\Classes.dll

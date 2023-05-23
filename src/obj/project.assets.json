@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "Classes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Classes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Classes.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Classes/1.0.0": {
+      "type": "project",
+      "path": "../Classes/Classes.csproj",
+      "msbuildProject": "../Classes/Classes.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "Classes >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\charl\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\oop2\\Pieces\\src\\src.csproj",
+      "projectUniqueName": "C:\\Session3\\OOP2\\Pieces\\src\\src.csproj",
       "projectName": "src",
-      "projectPath": "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\oop2\\Pieces\\src\\src.csproj",
+      "projectPath": "C:\\Session3\\OOP2\\Pieces\\src\\src.csproj",
       "packagesPath": "C:\\Users\\charl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\oop2\\Pieces\\src\\obj\\",
+      "outputPath": "C:\\Session3\\OOP2\\Pieces\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\charl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +52,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Session3\\OOP2\\Pieces\\Classes\\Classes.csproj": {
+              "projectPath": "C:\\Session3\\OOP2\\Pieces\\Classes\\Classes.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -61,7 +84,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
