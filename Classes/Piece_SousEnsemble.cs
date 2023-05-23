@@ -23,12 +23,17 @@ namespace Classes
         {
         }
 
-        public override string DOM()
+        public Dictionary<Pieces, int> GetDictionary()
+        {
+            return Sous_Emsemble_Components;
+        }
+
+        public override string BOM()
         {
             string info ="";
             foreach(KeyValuePair<Pieces, int> p in Sous_Emsemble_Components)
             {
-                info += $"{p.Key.Get_Description.PadRight(25)} {p.Key.Get_Reference.ToString().PadLeft(5)} {(p.Value).ToString().PadLeft(10)}\n";
+                info += $"{p.Key.Get_Description.PadRight(25)} {p.Key.Get_Reference.ToString().PadLeft(6)} {(p.Value).ToString().PadLeft(10)}\n";
             }
 
             return info;

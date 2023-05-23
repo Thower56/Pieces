@@ -26,7 +26,7 @@ internal class Program
         WaterValve.AjoutComponent(Couvercle_Lateral);
         
 
-        Console.WriteLine(WaterValve.DOM());
+        Console.WriteLine(WaterValve.BOM());
 
     }
 }

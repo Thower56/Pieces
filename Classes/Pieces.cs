@@ -78,20 +78,29 @@ namespace Classes
         {
             get{return this.m_Reference;}
         }
+        public Dictionary<Pieces, int> GetDictionary()
+        {
+            return Components;
+        }
 
-        public virtual string DOM()
+        public virtual string BOM()
         {
             string info = $"{"Description".PadLeft(0)} {"Reference".PadLeft(25)} {"Nombre".PadLeft(10)}\n";
-            info += $"{this.m_Description.PadRight(25)} {this.m_Reference.ToString().PadLeft(5)} {"1".PadLeft(10)}\n";
+            info += $"{this.m_Description.PadRight(25)} {this.m_Reference.ToString().PadLeft(6)} {"1".PadLeft(10)}\n";
 
             foreach(KeyValuePair<Pieces, int> p in Components)
             {
-                info += $"{p.Key.Get_Description.PadRight(25)} {p.Key.Get_Reference.ToString().PadLeft(5)} {p.Value.ToString().PadLeft(10)}\n";
+                info += $"{p.Key.Get_Description.PadRight(25)} {p.Key.Get_Reference.ToString().PadLeft(6)} {p.Value.ToString().PadLeft(10)}\n";
             
                 if(p.Key.GetType().Name == "Piece_SousEnsemble")
                 {
-
-                    info += p.Key.DOM();
+                    var copiePiece = (Piece_SousEnsemble)p.Key;
+                    var copieDic = copiePiece.GetDictionary();
+                    
+                    foreach(KeyValuePair<Pieces, int> ps in copieDic)
+                    {
+                        info += $"{ps.Key.Get_Description.PadRight(25)} {ps.Key.Get_Reference.ToString().PadLeft(6)} {(ps.Value * p.Value).ToString().PadLeft(10)}\n";
+                    }
                 }
                 
             }
