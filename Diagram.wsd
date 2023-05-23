@@ -7,15 +7,13 @@ class Pieces
     -reference : string
     -Dictionary<Pieces, int> : Dictionary<Pieces,int>
     +ListeComposant() : string
-    +GetDescription(): string
-    +GetNumeroSerie(): int
-    +GetReference(): string
+    +GetDictionary() : Dictionary <<Get>>
+    +GetDescription(): string <<Get>>
+    +GetNumeroSerie(): int <<Get>>
+    +GetReference(): string <<Get>>
 }
 
 class Pieces_assemblage
-{
-    -Test
-}
 
 class Piece_Moulee
 
@@ -23,10 +21,10 @@ class Piece_Usinee
 
 class Piece_SousEnsemble
 
-Pieces --> Piece_Moulee
-Pieces <-- Pieces_assemblage
-Pieces <-- Piece_Usinee
-Pieces <-- Piece_SousEnsemble
+Pieces <|-- Piece_Moulee
+Pieces <|-- Pieces_assemblage
+Pieces <|-- Piece_Usinee
+Pieces <|-- Piece_SousEnsemble
 
 
 @enduml
