@@ -20,12 +20,13 @@ internal class Program
         for(int i = 0; i < 4 ; i++)
         {
             Couvercle_Lateral.AjoutComponent(VisseM8);
+            
         }
         WaterValve.AjoutComponent(Couvercle_Lateral);
         WaterValve.AjoutComponent(Couvercle_Lateral);
         
 
-        Console.WriteLine(WaterValve.BOM());
+        Console.WriteLine(WaterValve.DOM());
 
     }
 }

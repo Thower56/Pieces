@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Session3\\OOP2\\Pieces\\src\\src.csproj": {}
+    "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\OOP2\\Pieces-1\\src\\src.csproj": {}
   },
   "projects": {
-    "C:\\Session3\\OOP2\\Pieces\\Classes\\Classes.csproj": {
+    "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\OOP2\\Pieces-1\\Classes\\Classes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Session3\\OOP2\\Pieces\\Classes\\Classes.csproj",
+        "projectUniqueName": "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\OOP2\\Pieces-1\\Classes\\Classes.csproj",
         "projectName": "Classes",
-        "projectPath": "C:\\Session3\\OOP2\\Pieces\\Classes\\Classes.csproj",
+        "projectPath": "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\OOP2\\Pieces-1\\Classes\\Classes.csproj",
         "packagesPath": "C:\\Users\\charl\\.nuget\\packages\\",
-        "outputPath": "C:\\Session3\\OOP2\\Pieces\\Classes\\obj\\",
+        "outputPath": "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\OOP2\\Pieces-1\\Classes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\charl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,18 +55,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Session3\\OOP2\\Pieces\\src\\src.csproj": {
+    "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\OOP2\\Pieces-1\\src\\src.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Session3\\OOP2\\Pieces\\src\\src.csproj",
+        "projectUniqueName": "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\OOP2\\Pieces-1\\src\\src.csproj",
         "projectName": "src",
-        "projectPath": "C:\\Session3\\OOP2\\Pieces\\src\\src.csproj",
+        "projectPath": "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\OOP2\\Pieces-1\\src\\src.csproj",
         "packagesPath": "C:\\Users\\charl\\.nuget\\packages\\",
-        "outputPath": "C:\\Session3\\OOP2\\Pieces\\src\\obj\\",
+        "outputPath": "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\OOP2\\Pieces-1\\src\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\charl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +83,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Session3\\OOP2\\Pieces\\Classes\\Classes.csproj": {
-                "projectPath": "C:\\Session3\\OOP2\\Pieces\\Classes\\Classes.csproj"
+              "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\OOP2\\Pieces-1\\Classes\\Classes.csproj": {
+                "projectPath": "C:\\Users\\charl\\OneDrive\\Documents\\Ecole\\OOP2\\Pieces-1\\Classes\\Classes.csproj"
               }
             }
           }
@@ -114,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

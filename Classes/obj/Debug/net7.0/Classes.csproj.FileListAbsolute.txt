@@ -10,3 +10,15 @@ C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\Classes.dll
 C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\refint\Classes.dll
 C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\Classes.pdb
 C:\Session3\OOP2\Pieces\Classes\obj\Debug\net7.0\ref\Classes.dll
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\bin\Debug\net7.0\Classes.deps.json
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\bin\Debug\net7.0\Classes.dll
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\bin\Debug\net7.0\Classes.pdb
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\obj\Debug\net7.0\Classes.csproj.AssemblyReference.cache
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\obj\Debug\net7.0\Classes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\obj\Debug\net7.0\Classes.AssemblyInfoInputs.cache
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\obj\Debug\net7.0\Classes.AssemblyInfo.cs
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\obj\Debug\net7.0\Classes.csproj.CoreCompileInputs.cache
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\obj\Debug\net7.0\Classes.dll
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\obj\Debug\net7.0\refint\Classes.dll
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\obj\Debug\net7.0\Classes.pdb
+C:\Users\charl\OneDrive\Documents\Ecole\OOP2\Pieces-1\Classes\obj\Debug\net7.0\ref\Classes.dll

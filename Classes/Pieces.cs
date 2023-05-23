@@ -7,7 +7,7 @@ namespace Classes
 {
     public class Pieces
     {
-        private List<Pieces> Components = new List<Pieces>();
+        private Dictionary<Pieces, int> Components = new Dictionary<Pieces, int>();
         private string m_Description;
         private string m_NumeroSerie;
         private int m_Reference;
@@ -20,7 +20,14 @@ namespace Classes
         }
         public virtual void AjoutComponent(Pieces p_component)
         {
-            Components.Add(p_component);
+            if(Components.ContainsKey(p_component))
+            {
+                Components[p_component]++;
+            }
+            else
+            {
+                Components.Add(p_component, 1);
+            }
         }
 
         public string Set_Description
@@ -72,16 +79,24 @@ namespace Classes
             get{return this.m_Reference;}
         }
 
-        public string BOM()
+        public virtual string DOM()
         {
-            var bill = new System.Text.StringBuilder();
-            bill.Append(String.Format("{0,0} {1,30} {2,10}", "Description", "Reference", "Nombre\n")); 
-            bill.Append(String.Format("{0,0} {1,-5} {2,9} {3}", Get_Description, Get_Reference, 1, "\n"));
-            foreach (Pieces p in Components)
+            string info = $"{"Description".PadLeft(0)} {"Reference".PadLeft(25)} {"Nombre".PadLeft(10)}\n";
+            info += $"{this.m_Description.PadRight(25)} {this.m_Reference.ToString().PadLeft(5)} {"1".PadLeft(10)}\n";
+
+            foreach(KeyValuePair<Pieces, int> p in Components)
             {
-                bill.Append(String.Format("{0,0} {1,-5} {2,9} {3}", p.Get_Description, p.Get_Reference, 1, "\n"));
+                info += $"{p.Key.Get_Description.PadRight(25)} {p.Key.Get_Reference.ToString().PadLeft(5)} {p.Value.ToString().PadLeft(10)}\n";
+            
+                if(p.Key.GetType().Name == "Piece_SousEnsemble")
+                {
+
+                    info += p.Key.DOM();
+                }
+                
             }
-            return bill.ToString();
+
+            return info;
         }
 
         public override string ToString()
@@ -89,9 +104,12 @@ namespace Classes
             string info = $"Piece: {this.m_Description}, part - #{this.m_Reference}, numero serie - #{this.m_NumeroSerie}\n";
 
             
-            foreach(Pieces p in Components)
+            foreach(KeyValuePair<Pieces, int> p in Components)
             {   
-                info += $"  {p.ToString()}";
+                for(int i=0 ; i < p.Value ; i++)
+                {
+                    info += $"  {p.Key.ToString()}";
+                }
             }
     
             return info;
