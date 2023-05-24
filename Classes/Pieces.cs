@@ -100,16 +100,17 @@ namespace Classes
 
         public string BOM()
         {
-            var bom = PrepareListe()
+            List<PieceBom> listBom = PrepareListe()
             .GroupBy(p => p.Get_Description)
-            .Select(p => new {Description = p.Key, Reference = p.First().Get_Reference, Count = p.Count()})
-            .OrderBy(p => p.Reference);
+            .Select(p => new PieceBom{m_Description = p.Key, m_Reference = p.First().m_Reference, m_Nombre = p.Count()})
+            .OrderBy(p => p.m_Reference)
+            .ToList();
 
             string BOM = $"{"Description".PadLeft(0)} {"Reference".PadLeft(25)} {"Nombre".PadLeft(10)}\n";
                         
-            foreach(var p in bom)
+            foreach(var p in listBom)
             {
-                BOM += $"{(p.Description).PadRight(25)} {(p.Reference).ToString().PadLeft(6)} {(p.Count).ToString().PadLeft(10)}\n";
+                BOM += p.ToString();
             }
 
             return BOM;
