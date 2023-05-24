@@ -83,30 +83,63 @@ namespace Classes
             return Components;
         }
 
-        public virtual string BOM()
+        public virtual List<Pieces> PrepareListe()
         {
-            string info = $"{"Description".PadLeft(0)} {"Reference".PadLeft(25)} {"Nombre".PadLeft(10)}\n";
-            info += $"{this.m_Description.PadRight(25)} {this.m_Reference.ToString().PadLeft(6)} {"1".PadLeft(10)}\n";
+            List<Pieces> liste = new List<Pieces>{ new Pieces(Get_Description, Get_Reference, Get_NumeroSerie)};
 
             foreach(KeyValuePair<Pieces, int> p in Components)
             {
-                info += $"{p.Key.Get_Description.PadRight(25)} {p.Key.Get_Reference.ToString().PadLeft(6)} {p.Value.ToString().PadLeft(10)}\n";
-            
-                if(p.Key.GetType().Name == "Piece_SousEnsemble")
+                for (int i = 0; i < p.Value; i++)
                 {
-                    var copiePiece = (Piece_SousEnsemble)p.Key;
-                    var copieDic = copiePiece.GetDictionary();
-                    
-                    foreach(KeyValuePair<Pieces, int> ps in copieDic)
-                    {
-                        info += $"{ps.Key.Get_Description.PadRight(25)} {ps.Key.Get_Reference.ToString().PadLeft(6)} {(ps.Value * p.Value).ToString().PadLeft(10)}\n";
-                    }
+                    liste.AddRange(p.Key.PrepareListe());
                 }
-                
             }
 
-            return info;
+            return liste;
         }
+
+        public string BOM()
+        {
+            var bom = PrepareListe()
+            .GroupBy(p => p.Get_Description)
+            .Select(p => new {Description = p.Key, Reference = p.First().Get_Reference, Count = p.Count()})
+            .OrderBy(p => p.Reference);
+
+            string BOM = $"{"Description".PadLeft(0)} {"Reference".PadLeft(25)} {"Nombre".PadLeft(10)}\n";
+                        
+            foreach(var p in bom)
+            {
+                BOM += $"{(p.Description).PadRight(25)} {(p.Reference).ToString().PadLeft(6)} {(p.Count).ToString().PadLeft(10)}\n";
+            }
+
+            return BOM;
+        }
+
+
+        // public virtual string BOM()
+        // {
+        //     string info = $"{"Description".PadLeft(0)} {"Reference".PadLeft(25)} {"Nombre".PadLeft(10)}\n";
+        //     info += $"{this.m_Description.PadRight(25)} {this.m_Reference.ToString().PadLeft(6)} {"1".PadLeft(10)}\n";
+
+        //     foreach(KeyValuePair<Pieces, int> p in Components)
+        //     {
+        //         info += $"{p.Key.Get_Description.PadRight(25)} {p.Key.Get_Reference.ToString().PadLeft(6)} {p.Value.ToString().PadLeft(10)}\n";
+            
+        //         if(p.Key.GetType().Name == "Piece_SousEnsemble")
+        //         {
+        //             var copiePiece = (Piece_SousEnsemble)p.Key;
+        //             var copieDic = copiePiece.GetDictionary();
+                    
+        //             foreach(KeyValuePair<Pieces, int> ps in copieDic)
+        //             {
+        //                 info += $"{ps.Key.Get_Description.PadRight(25)} {ps.Key.Get_Reference.ToString().PadLeft(6)} {(ps.Value * p.Value).ToString().PadLeft(10)}\n";
+        //             }
+        //         }
+                
+        //     }
+
+        //     return info;
+        // }
 
         public override string ToString()
         {   

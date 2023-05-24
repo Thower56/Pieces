@@ -28,16 +28,31 @@ namespace Classes
             return Sous_Emsemble_Components;
         }
 
-        public override string BOM()
+        public override List<Pieces> PrepareListe()
         {
-            string info ="";
+            List<Pieces> liste = new List<Pieces>{ new Pieces(Get_Description, Get_Reference, Get_NumeroSerie)};
+
             foreach(KeyValuePair<Pieces, int> p in Sous_Emsemble_Components)
             {
-                info += $"{p.Key.Get_Description.PadRight(25)} {p.Key.Get_Reference.ToString().PadLeft(6)} {(p.Value).ToString().PadLeft(10)}\n";
+                for (int i = 0; i < p.Value; i++)
+                {
+                    liste.Add(p.Key);   
+                }
             }
 
-            return info;
+            return liste;
         }
+
+        // public override string BOM()
+        // {
+        //     string info ="";
+        //     foreach(KeyValuePair<Pieces, int> p in Sous_Emsemble_Components)
+        //     {
+        //         info += $"{p.Key.Get_Description.PadRight(25)} {p.Key.Get_Reference.ToString().PadLeft(6)} {(p.Value).ToString().PadLeft(10)}\n";
+        //     }
+
+        //     return info;
+        // }
         
         public override string ToString()
         {   
