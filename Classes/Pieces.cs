@@ -116,7 +116,7 @@ namespace Classes
             return BOM;
         }
 
-
+        // Ancienne version
         // public virtual string BOM()
         // {
         //     string info = $"{"Description".PadLeft(0)} {"Reference".PadLeft(25)} {"Nombre".PadLeft(10)}\n";
@@ -156,6 +156,19 @@ namespace Classes
             }
     
             return info;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (!(obj is Pieces)) return false;
+
+            Pieces p = (Pieces) obj;
+            return this.Get_Description == p.Get_Description & this.Get_NumeroSerie == p.Get_NumeroSerie & this.m_Reference == p.m_Reference;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.Get_Description, this.Get_NumeroSerie, this.Get_Reference);
         }
 
     }
