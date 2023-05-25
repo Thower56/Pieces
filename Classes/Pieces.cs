@@ -172,18 +172,5 @@ namespace Classes
             return HashCode.Combine(this.Get_Description, this.Get_NumeroSerie, this.Get_Reference);
         }
 
-        public override bool Equals(Object obj)
-        {
-            if (!(obj is Pieces)) return false;
-
-            Pieces p = (Pieces) obj;
-            return this.Get_Description == p.Get_Description & this.Get_NumeroSerie == p.Get_NumeroSerie & this.m_Reference == p.m_Reference;
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(this.Get_Description, this.Get_NumeroSerie, this.Get_Reference);
-        }
-
     }
 }
