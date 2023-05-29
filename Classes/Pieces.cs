@@ -14,6 +14,9 @@ namespace Classes
 
         public Pieces(string p_description, int p_reference, string p_numeroSerie)
         {
+            if(p_description == null){throw new ArgumentNullException("description ne peut pas etre null (ctor1)"); }
+            if(p_reference <= 0){throw new ArgumentNullException("reference ne peut pas etre < 0 (ctor2)"); }
+            if(p_numeroSerie <= 0){throw new ArgumentNullException("numeroSerie ne peut pas etre < 0 (ctor3)"); }
             Set_Description = p_description;
             Set_NumeroSerie = p_numeroSerie;
             Set_Reference = p_reference;
@@ -116,31 +119,6 @@ namespace Classes
             return BOM;
         }
 
-        // Ancienne version
-        // public virtual string BOM()
-        // {
-        //     string info = $"{"Description".PadLeft(0)} {"Reference".PadLeft(25)} {"Nombre".PadLeft(10)}\n";
-        //     info += $"{this.m_Description.PadRight(25)} {this.m_Reference.ToString().PadLeft(6)} {"1".PadLeft(10)}\n";
-
-        //     foreach(KeyValuePair<Pieces, int> p in Components)
-        //     {
-        //         info += $"{p.Key.Get_Description.PadRight(25)} {p.Key.Get_Reference.ToString().PadLeft(6)} {p.Value.ToString().PadLeft(10)}\n";
-            
-        //         if(p.Key.GetType().Name == "Piece_SousEnsemble")
-        //         {
-        //             var copiePiece = (Piece_SousEnsemble)p.Key;
-        //             var copieDic = copiePiece.GetDictionary();
-                    
-        //             foreach(KeyValuePair<Pieces, int> ps in copieDic)
-        //             {
-        //                 info += $"{ps.Key.Get_Description.PadRight(25)} {ps.Key.Get_Reference.ToString().PadLeft(6)} {(ps.Value * p.Value).ToString().PadLeft(10)}\n";
-        //             }
-        //         }
-                
-        //     }
-
-        //     return info;
-        // }
 
         public override string ToString()
         {   
