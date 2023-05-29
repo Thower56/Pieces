@@ -7,32 +7,32 @@ namespace Classes
 {
     public class Piece_SousEnsemble : Pieces
     {
-        private Dictionary<Pieces, int> Sous_Emsemble_Components = new Dictionary<Pieces, int>();
-        public override void AjoutComponent(Pieces p_component)
+        private Dictionary<Pieces, int> m_Sous_Emsemble_Components = new Dictionary<Pieces, int>();
+        public override void AjoutPieces(Pieces p_component)
         {
-            if(Sous_Emsemble_Components.ContainsKey(p_component))
+            if(m_Sous_Emsemble_Components.ContainsKey(p_component))
             {
-                Sous_Emsemble_Components[p_component]++;
+                m_Sous_Emsemble_Components[p_component]++;
             }
             else
             {
-                Sous_Emsemble_Components.Add(p_component, 1);
+                m_Sous_Emsemble_Components.Add(p_component, 1);
             }
         }
         public Piece_SousEnsemble(string p_description, int p_reference, string p_numeroSerie) : base(p_description, p_reference, p_numeroSerie)
         {
         }
 
-        public Dictionary<Pieces, int> GetDictionary()
+        public Dictionary<Pieces, int> GetListePieces()
         {
-            return Sous_Emsemble_Components;
+            return m_Sous_Emsemble_Components;
         }
 
         public override List<Pieces> PrepareListe()
         {
             List<Pieces> liste = new List<Pieces>{ new Pieces(Get_Description, Get_Reference, Get_NumeroSerie)};
 
-            foreach(KeyValuePair<Pieces, int> p in Sous_Emsemble_Components)
+            foreach(KeyValuePair<Pieces, int> p in m_Sous_Emsemble_Components)
             {
                 for (int i = 0; i < p.Value; i++)
                 {
@@ -43,23 +43,12 @@ namespace Classes
             return liste;
         }
 
-        // public override string BOM()
-        // {
-        //     string info ="";
-        //     foreach(KeyValuePair<Pieces, int> p in Sous_Emsemble_Components)
-        //     {
-        //         info += $"{p.Key.Get_Description.PadRight(25)} {p.Key.Get_Reference.ToString().PadLeft(6)} {(p.Value).ToString().PadLeft(10)}\n";
-        //     }
-
-        //     return info;
-        // }
-        
         public override string ToString()
         {   
             string info = $"Piece: {Get_Description}, part - #{Get_Reference}, numero serie - #{Get_NumeroSerie}\n";
 
             
-            foreach(KeyValuePair<Pieces, int> p in Sous_Emsemble_Components)
+            foreach(KeyValuePair<Pieces, int> p in m_Sous_Emsemble_Components)
             {   
                 for(int i=0 ; i < p.Value ; i++)
                 {
