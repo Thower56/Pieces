@@ -2,12 +2,13 @@
 
 class Pieces
 {
-    -description : string
-    -numero_serie : int
-    -reference : string
-    -Dictionary<Pieces, int> : Dictionary<Pieces,int>
-    +ListeComposant() : string
-    +GetDictionary() : Dictionary <<Get>>
+    -m_Description : string
+    -m_Numero_serie : int
+    -m_Reference : string
+    -m_Dictionary<Pieces, int> : Dictionary<Pieces,int>
+    +AjoutPieces
+    +PrepareListe() : List<Pieces>
+    +GetListePieces() : Dictionary <<Get>>
     +GetDescription(): string <<Get>>
     +GetNumeroSerie(): int <<Get>>
     +GetReference(): string <<Get>>
@@ -20,6 +21,12 @@ class Piece_Moulee
 class Piece_Usinee
 
 class Piece_SousEnsemble
+{
+    -m_Sous_Emsemble_Components : Dictionary
+    +AjoutPieces() : void
+    +GetListePieces() : Dictionary <<Get>>
+    +PrepareListe() : List<pieces>
+}
 
 Pieces <|-- Piece_Moulee
 Pieces <|-- Pieces_assemblage
