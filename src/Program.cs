@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Classes;
 internal class Program
 {
@@ -10,21 +10,21 @@ internal class Program
         Pieces Couvercle_Monobloc = new Piece_Usinee("Couvercle Monobloc", 1257,"9874");
         Pieces Systeme_activation = new Piece_SousEnsemble("System d'activation", 1887, "0574");
 
-        WaterValve.AjoutComponent(new Piece_Moulee("Base", 1387, "0474"));
+        WaterValve.AjoutPieces(new Piece_Moulee("Base", 1387, "0474"));
         
-        Systeme_activation.AjoutComponent(new Pieces_assemblage("Pin",1687, "0974" ));
-        Systeme_activation.AjoutComponent(new Piece_Moulee("Plug", 1657, "0964"));
-        Systeme_activation.AjoutComponent(new Piece_Usinee("Poigne", 3157,"2547"));
+        Systeme_activation.AjoutPieces(new Pieces_assemblage("Pin",1687, "0974" ));
+        Systeme_activation.AjoutPieces(new Piece_Moulee("Plug", 1657, "0964"));
+        Systeme_activation.AjoutPieces(new Piece_Usinee("Poigne", 3157,"2547"));
 
-        WaterValve.AjoutComponent(Systeme_activation);
-        Couvercle_Lateral.AjoutComponent(Couvercle_Monobloc);
+        WaterValve.AjoutPieces(Systeme_activation);
+        Couvercle_Lateral.AjoutPieces(Couvercle_Monobloc);
         for(int i = 0; i < 4 ; i++)
         {
-            Couvercle_Lateral.AjoutComponent(VisseM8);
+            Couvercle_Lateral.AjoutPieces(VisseM8);
             
         }
-        WaterValve.AjoutComponent(Couvercle_Lateral);
-        WaterValve.AjoutComponent(Couvercle_Lateral);
+        WaterValve.AjoutPieces(Couvercle_Lateral);
+        WaterValve.AjoutPieces(Couvercle_Lateral);
         
         
 
