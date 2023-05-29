@@ -14,14 +14,14 @@ namespace Classes
 
         public Pieces(string p_description, int p_reference, string p_numeroSerie)
         {
-            if(p_description == null){throw new ArgumentNullException("description ne peut pas etre null (ctor1)"); }
+            if(p_description is null){throw new ArgumentNullException("description ne peut pas etre null (ctor1)"); }
             if(p_reference <= 0){throw new ArgumentNullException("reference ne peut pas etre < 0 (ctor2)"); }
-            if(p_numeroSerie <= 0){throw new ArgumentNullException("numeroSerie ne peut pas etre < 0 (ctor3)"); }
+            if(p_numeroSerie is null){throw new ArgumentNullException("numeroSerie ne peut pas etre null (ctor3)"); }
             Set_Description = p_description;
             Set_NumeroSerie = p_numeroSerie;
             Set_Reference = p_reference;
         }
-        public virtual void AjoutComponent(Pieces p_component)
+        public virtual void AjoutPieces(Pieces p_component)
         {
             if(Components.ContainsKey(p_component))
             {
@@ -81,7 +81,7 @@ namespace Classes
         {
             get{return this.m_Reference;}
         }
-        public Dictionary<Pieces, int> GetDictionary()
+        public Dictionary<Pieces, int> GetListePieces()
         {
             return Components;
         }
