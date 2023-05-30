@@ -102,8 +102,8 @@ namespace Classes
         {
             List<PieceBom> listBom = PrepareListe()
             .GroupBy(p => p.Get_Description)
-            .Select(p => new PieceBom{m_Description = p.Key, m_Reference = p.First().m_Reference, m_Nombre = p.Count()})
-            .OrderBy(p => p.m_Reference)
+            .Select(p => new PieceBom{Set_Description = p.Key, Set_Reference = p.First().m_Reference, Set_Nombre = p.Count()})
+            .OrderBy(p => p.Get_Reference)
             .ToList();
 
             string BOM = $"{"Description".PadLeft(0)} {"Reference".PadLeft(25)} {"Nombre".PadLeft(10)}\n";
@@ -144,7 +144,7 @@ namespace Classes
 
         public override string ToString()
         {   
-            string info = $"Piece: {this.m_Description}, part - #{this.m_Reference}, numero serie - #{this.m_NumeroSerie}\n";
+            string info = $"Piece: {this.m_Description}, part - #{this.m_Reference}, numero serie - #{this.m_NumeroSerie} {Environment.Exit(0)}";
 
             
             foreach(KeyValuePair<Pieces, int> p in Components)
@@ -161,10 +161,10 @@ namespace Classes
         
         public override bool Equals(Object obj)
         {
-            if (!(obj is Pieces)) return false;
+            if (!(obj is Pieces) || (obj is null)) return false;
 
             Pieces p = (Pieces) obj;
-            return this.Get_Description == p.Get_Description & this.Get_NumeroSerie == p.Get_NumeroSerie & this.m_Reference == p.m_Reference;
+            return p.GetHashCode() == this.GetHashCode();
         }
 
         public override int GetHashCode()
