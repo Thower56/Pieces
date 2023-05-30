@@ -122,7 +122,7 @@ namespace Classes
 
         public override string ToString()
         {   
-            string info = $"Piece: {this.m_Description}, part - #{this.m_Reference}, numero serie - #{this.m_NumeroSerie} {Environment.Exit(0)}";
+            string info = $"Piece: {this.m_Description}, part - #{this.m_Reference}, numero serie - #{this.m_NumeroSerie} \n";
 
             
             foreach(KeyValuePair<Pieces, int> p in Components)
