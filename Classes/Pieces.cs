@@ -7,7 +7,7 @@ namespace Classes
 {
     public class Pieces
     {
-        private Dictionary<Pieces, int> Components = new Dictionary<Pieces, int>();
+        private Dictionary<Pieces, int> Components;
         private string m_Description;
         private string m_NumeroSerie;
         private int m_Reference;
@@ -17,6 +17,7 @@ namespace Classes
             if(p_description is null){throw new ArgumentNullException("description ne peut pas etre null (ctor1)"); }
             if(p_reference <= 0){throw new ArgumentNullException("reference ne peut pas etre < 0 (ctor2)"); }
             if(p_numeroSerie is null){throw new ArgumentNullException("numeroSerie ne peut pas etre null (ctor3)"); }
+            Components = new Dictionary<Pieces, int>();
             Description = p_description;
             NumeroSerie = p_numeroSerie;
             Reference = p_reference;
