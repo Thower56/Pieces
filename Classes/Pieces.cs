@@ -7,7 +7,7 @@ namespace Classes
 {
     public class Pieces
     {
-        private Dictionary<Pieces, int> Components;
+        private Dictionary<Pieces, int> m_Components;
         private string m_Description;
         private string m_NumeroSerie;
         private int m_Reference;
@@ -17,20 +17,20 @@ namespace Classes
             if(p_description is null){throw new ArgumentNullException("description ne peut pas etre null (ctor1)"); }
             if(p_reference <= 0){throw new ArgumentNullException("reference ne peut pas etre < 0 (ctor2)"); }
             if(p_numeroSerie is null){throw new ArgumentNullException("numeroSerie ne peut pas etre null (ctor3)"); }
-            Components = new Dictionary<Pieces, int>();
+            m_Components = new Dictionary<Pieces, int>();
             Description = p_description;
             NumeroSerie = p_numeroSerie;
             Reference = p_reference;
         }
         public virtual void AjoutPieces(Pieces p_component)
         {
-            if(Components.ContainsKey(p_component))
+            if(this.m_Components.ContainsKey(p_component))
             {
-                Components[p_component]++;
+                this.m_Components[p_component]++;
             }
             else
             {
-                Components.Add(p_component, 1);
+                this.m_Components.Add(p_component, 1);
             }
         }
 
@@ -84,14 +84,14 @@ namespace Classes
 
         public Dictionary<Pieces, int> ListePieces()
         {
-            return Components;
+            return this.m_Components;
         }
 
         public virtual List<Pieces> PrepareListe()
         {
             List<Pieces> liste = new List<Pieces>{ new Pieces(Description, Reference, NumeroSerie)};
 
-            foreach(KeyValuePair<Pieces, int> p in Components)
+            foreach(KeyValuePair<Pieces, int> p in this.m_Components)
             {
                 for (int i = 0; i < p.Value; i++)
                 {
@@ -126,7 +126,7 @@ namespace Classes
             string info = $"Piece: {this.m_Description}, part - #{this.m_Reference}, numero serie - #{this.m_NumeroSerie} /n";
 
             
-            foreach(KeyValuePair<Pieces, int> p in Components)
+            foreach(KeyValuePair<Pieces, int> p in this.m_Components)
             {   
                 for(int i=0 ; i < p.Value ; i++)
                 {
