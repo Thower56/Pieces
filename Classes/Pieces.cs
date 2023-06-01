@@ -17,9 +17,9 @@ namespace Classes
             if(p_description is null){throw new ArgumentNullException("description ne peut pas etre null (ctor1)"); }
             if(p_reference <= 0){throw new ArgumentNullException("reference ne peut pas etre < 0 (ctor2)"); }
             if(p_numeroSerie is null){throw new ArgumentNullException("numeroSerie ne peut pas etre null (ctor3)"); }
-            Set_Description = p_description;
-            Set_NumeroSerie = p_numeroSerie;
-            Set_Reference = p_reference;
+            Description = p_description;
+            NumeroSerie = p_numeroSerie;
+            Reference = p_reference;
         }
         public virtual void AjoutPieces(Pieces p_component)
         {
@@ -33,7 +33,7 @@ namespace Classes
             }
         }
 
-        public string Set_Description
+        public string Description
         {
             set
             {
@@ -43,9 +43,13 @@ namespace Classes
                 }
                 this.m_Description = value;
             }
+            get
+            {
+                return this.m_Description;
+            }
         }
 
-        public string Set_NumeroSerie
+        public string NumeroSerie
         {
             set
             {   
@@ -55,9 +59,13 @@ namespace Classes
                 }
                 this.m_NumeroSerie = value;
             }
+            get
+            {
+                return this.m_NumeroSerie;
+            }
         }
 
-        public int Set_Reference
+        public int Reference
         {
             set
             {
@@ -67,28 +75,20 @@ namespace Classes
                 }
                 this.m_Reference = value;
             }
+            get
+            {
+                return this.m_Reference;
+            }
         }
 
-        public string Get_Description
-        {
-            get{return this.m_Description;}
-        }
-        public string Get_NumeroSerie
-        {
-            get{return this.m_NumeroSerie;}
-        }
-        public int Get_Reference
-        {
-            get{return this.m_Reference;}
-        }
-        public Dictionary<Pieces, int> GetListePieces()
+        public Dictionary<Pieces, int> ListePieces()
         {
             return Components;
         }
 
         public virtual List<Pieces> PrepareListe()
         {
-            List<Pieces> liste = new List<Pieces>{ new Pieces(Get_Description, Get_Reference, Get_NumeroSerie)};
+            List<Pieces> liste = new List<Pieces>{ new Pieces(Description, Reference, NumeroSerie)};
 
             foreach(KeyValuePair<Pieces, int> p in Components)
             {
@@ -104,7 +104,7 @@ namespace Classes
         public string BOM()
         {
             List<PieceBom> listBom = PrepareListe()
-            .GroupBy(p => p.Get_Description)
+            .GroupBy(p => p.Description)
             .Select(p => new PieceBom{Set_Description = p.Key, Set_Reference = p.First().m_Reference, Set_Nombre = p.Count()})
             .OrderBy(p => p.Get_Reference)
             .ToList();
@@ -122,7 +122,7 @@ namespace Classes
 
         public override string ToString()
         {   
-            string info = $"Piece: {this.m_Description}, part - #{this.m_Reference}, numero serie - #{this.m_NumeroSerie} \n";
+            string info = $"Piece: {this.m_Description}, part - #{this.m_Reference}, numero serie - #{this.m_NumeroSerie} /n";
 
             
             foreach(KeyValuePair<Pieces, int> p in Components)
@@ -147,7 +147,7 @@ namespace Classes
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(this.Get_Description, this.Get_NumeroSerie, this.Get_Reference);
+            return HashCode.Combine(this.Description, this.NumeroSerie, this.Reference);
         }
 
     }
