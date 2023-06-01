@@ -17,7 +17,7 @@ namespace Classes
             if(p_description is null){throw new ArgumentNullException("description ne peut pas etre null (ctor1)"); }
             if(p_reference <= 0){throw new ArgumentNullException("reference ne peut pas etre < 0 (ctor2)"); }
             if(p_numeroSerie is null){throw new ArgumentNullException("numeroSerie ne peut pas etre null (ctor3)"); }
-            
+
             m_Components = new Dictionary<Pieces, int>();
             Description = p_description;
             NumeroSerie = p_numeroSerie;
@@ -85,12 +85,13 @@ namespace Classes
 
         public Dictionary<Pieces, int> ListePieces()
         {
-            return this.m_Components;
+            Dictionary<Pieces, int> copieListe = this.m_Components;
+            return copieListe;
         }
 
         public virtual List<Pieces> PrepareListe()
         {
-            List<Pieces> liste = new List<Pieces>{ new Pieces(Description, Reference, NumeroSerie)};
+            List<Pieces> liste = new List<Pieces>{ new Pieces(this.m_Description, this.m_Reference, this.m_NumeroSerie)};
 
             foreach(KeyValuePair<Pieces, int> p in this.m_Components)
             {
@@ -149,7 +150,7 @@ namespace Classes
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(this.Description, this.NumeroSerie, this.Reference);
+            return HashCode.Combine(this.m_Description, this.m_NumeroSerie, this.m_Reference);
         }
 
     }
