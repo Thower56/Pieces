@@ -105,10 +105,10 @@ namespace Classes
         public string BOM()
         {
             List<PieceBom> listBom = PrepareListe()
-            .GroupBy(p => p.Description)
-            .Select(p => new PieceBom{Set_Description = p.Key, Set_Reference = p.First().m_Reference, Set_Nombre = p.Count()})
-            .OrderBy(p => p.Get_Reference)
-            .ToList();
+                .GroupBy(p => p.Description)
+                .Select(p => new PieceBom{Set_Description = p.Key, Set_Reference = p.First().m_Reference, Set_Nombre = p.Count()})
+                .OrderBy(p => p.Get_Reference)
+                .ToList();
 
             string BOM = $"{"Description".PadLeft(0)} {"Reference".PadLeft(25)} {"Nombre".PadLeft(10)}\n";
                         
