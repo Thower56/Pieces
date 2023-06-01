@@ -13,7 +13,7 @@ namespace Classes
         
         public override string ToString()
         {
-            return $"Piece: {this.Get_Description}, part - #{this.Get_Reference}, numero serie - #{this.Get_NumeroSerie}\n";
+            return $"Piece: {this.Description}, part - #{this.Reference}, numero serie - #{this.NumeroSerie}\n";
         }
     }
 }

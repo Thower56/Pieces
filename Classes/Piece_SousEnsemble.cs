@@ -30,7 +30,7 @@ namespace Classes
 
         public override List<Pieces> PrepareListe()
         {
-            List<Pieces> liste = new List<Pieces>{ new Pieces(Get_Description, Get_Reference, Get_NumeroSerie)};
+            List<Pieces> liste = new List<Pieces>{ new Pieces(Description, Reference, NumeroSerie)};
 
             foreach(KeyValuePair<Pieces, int> p in m_Sous_Emsemble_Components)
             {
@@ -45,7 +45,7 @@ namespace Classes
 
         public override string ToString()
         {   
-            string info = $"Piece: {Get_Description}, part - #{Get_Reference}, numero serie - #{Get_NumeroSerie}\n";
+            string info = $"Piece: {Description}, part - #{Reference}, numero serie - #{NumeroSerie}\n";
 
             
             foreach(KeyValuePair<Pieces, int> p in m_Sous_Emsemble_Components)
