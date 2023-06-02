@@ -53,7 +53,7 @@ namespace Classes
 
         public override string ToString()
         {
-            return $"{(this.m_Description).PadRight(25)} {(this.m_Reference).ToString().PadLeft(6)} {(this.m_Nombre).ToString().PadLeft(10)}\n";
+            return $"{(this.m_Description).PadRight(27)} {(this.m_Reference).ToString().PadRight(13)} {(this.m_Nombre).ToString().PadRight(10)}\n";
         }
     }
 }
